@@ -5,12 +5,13 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/junchil/k8sclient/modules/kubeconfig"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 )
 
 func main() {
-	kubeConfig, err := kubeconfig.readKubeConfig()
+	kubeConfig, err := kubeconfig.ReadKubeConfig()
 	clientset, err := kubernetes.NewForConfig(kubeConfig)
 	if err != nil {
 		fmt.Printf("error getting Kubernetes clientset: %v\n", err)
