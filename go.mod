@@ -1,4 +1,4 @@
-module k8sclient
+module github.com/junchil/k8sclient
 
 go 1.21.0
 
